@@ -1,8 +1,10 @@
 from aiogram import Dispatcher, Bot
-from config import TOKEN
+import os
+import dotenv
 from handlers import router
 
-bot = Bot(token=TOKEN)
+dotenv.load_dotenv()
+bot = Bot(token=os.getenv('TOKEN'))
 
 dp = Dispatcher(bot)
 
